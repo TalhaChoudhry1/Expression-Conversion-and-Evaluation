@@ -11,7 +11,7 @@ g++ -o expr expr.cpp
 ## How to run
 
 ```
-./expr
+./dsaAsisn1
 ```
 
 Then type your expression and press Enter. The program will ask you to enter a value for each variable.
