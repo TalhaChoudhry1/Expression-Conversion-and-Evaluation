@@ -243,28 +243,3 @@ void printPostfix() {
     cout << endl;
 }
 
-int main() {
-    char expr[1024];
-    cout<<" Enter yourr expression: \n";
-    if (!cin.getline(expr, sizeof(expr))) {
-        cerr << "Syntax error: no input" << endl;
-        return 1;
-    }
-
-    if (!tokenize(expr)) return 1;
-    if (!validate())     return 1;
-
-    toPostfix();
-    collectAndPromptVars();
-    printPostfix();
-
-    bool ok;
-    double result = evaluate(ok);
-    if (!ok) return 2;
-
-    long long iv = (long long)result;
-    if ((double)iv == result) cout << iv << endl;
-    else                      cout << result << endl;
-
-    return 0;
-}
